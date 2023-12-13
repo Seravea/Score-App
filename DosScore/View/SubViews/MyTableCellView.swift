@@ -59,8 +59,12 @@ struct MyTableCellView: View {
                                     
                                 
                             )
-                            .matchedGeometryEffect(id: "actionOff", in: isSelectedOff)
-                            //.padding(1)
+                        
+                        
+                        //  Message in the Debug Terminal with the GeometryEffect "actionOff", Testing but nothing change without the matchedGeometry modifier and the error message is deleted.. so...
+                        
+//                            .matchedGeometryEffect(id: "actionOff", in: isSelectedOff)
+                      
                         
                             .overlay {
                                 AddButtonBackgroundView()

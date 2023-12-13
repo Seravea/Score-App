@@ -392,6 +392,18 @@ final class TableViewModel: ObservableObject {
         fetchTableData()
     }
     
+    func deleteTrophys() {
+        let savedTrophys: [Trophy] = []
+        
+        let encoder = JSONEncoder()
+        
+        if let encoded = try? encoder.encode(savedTrophys) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "TrophysWon")
+        }
+        
+    }
+    
     func saveWonTrophys(){
         var trophysWon: [Trophy] = []
         var savedTrophys: [Trophy] = []
@@ -406,6 +418,8 @@ final class TableViewModel: ObservableObject {
         trophysWon = playerAndTrophyDic.values.map { trophy in
            return trophy
         }
+        
+        
         
         for trophy in trophysWon {
             if savedTrophys.contains(trophy) == false {

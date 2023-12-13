@@ -31,6 +31,8 @@ struct TrophysMenuView: View {
     @State var selectedPicker = "À receuillir"
     
     var body: some View {
+        
+       
         ZStack {
             BackgroundDarkModeView()
             VStack {
@@ -68,8 +70,10 @@ struct TrophysMenuView: View {
                     
                 }
             }
+
             
         }
+        
        
         
         

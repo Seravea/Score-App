@@ -120,7 +120,7 @@ struct TrophysView: View {
             
         }
         .onAppear {
-            
+            print(tableViewModel.playerAndTrophyDic.keys)
             tableViewModel.saveWonTrophys()
              
             tableViewModel.addGamesNumber(table: table)
