@@ -31,6 +31,7 @@ struct MyButtonLabelView_Previews: PreviewProvider {
 
 
 struct BackgroundButtonView: View {
+    
     var body: some View {
         RoundedRectangle(cornerRadius: 40)
             .foregroundStyle(LinearGradient(colors: [Color("neonBlue"), Color("neonPurple"), Color("neonPink")], startPoint: .leading, endPoint: .trailing))

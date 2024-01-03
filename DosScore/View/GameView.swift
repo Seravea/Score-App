@@ -57,23 +57,67 @@ struct GameView: View {
     
     @EnvironmentObject var nav: NavigationManager
     @State var isNaToLadder: Bool = false
+    
+    @State var isQuitGameAlertOn: Bool = false
+    @State var isShowingScoreView: Bool = false
+    
     var body: some View {
         VStack {
-            HStack {
-                Button {
-                    nav.goBack()
-                   
-                }label: {
-                    Image(systemName: "chevron.left")
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(.textColor)
-                        .font(.title2)
-                       
-                }
+            
+          
+                HStack {
+                    Button {
+                        isQuitGameAlertOn = true
+                    }label: {
+                        ZStack {
+                            BackgroundButtonView()
+                            Text("Quitter")
+                                .buttonText(color: .textColor, size: 14)
+                                .shadow(radius: 5)
+                            
+                        }
+                        .frame(width: 75, height: 30)
+                           
+                    }
+                    
+                Spacer()
                 
-                TitleView(isJustTitle: false, title: "Ajouter les points")
-                
-        }
+                    Button {
+                        isShowingScoreView = true
+                    }label: {
+                        
+                        ZStack {
+                            BackgroundButtonView()
+                            Text("Score")
+                                .buttonText(color: .textColor, size: 14)
+                                .shadow(radius: 5)
+                            
+                        }
+                        .frame(width: 75, height: 30)
+                            
+                            
+                           
+                    }
+               
+
+            }
+                .padding(.horizontal, 15)
+            
+//            HStack {
+//                Button {
+//                    nav.goBack()
+//                   
+//                }label: {
+//                    Image(systemName: "chevron.left")
+//                        .frame(width: 20, height: 20)
+//                        .foregroundColor(.textColor)
+//                        .font(.title2)
+//                       
+//                }
+//                
+//                TitleView(isJustTitle: tru, title: "Partie en cours")
+//
+//        }
             
             Text("Manche \(table.inGameStep)")
                 .font(.custom("Poppins-Italic", size: 14))
@@ -323,7 +367,26 @@ struct GameView: View {
         }
         .navigationBarBackButtonHidden(true)
         .background(BackgroundDarkModeView())
-        
+        .alert("Êtes-vous sûr de quitter le jeu ?", isPresented: $isQuitGameAlertOn) {
+            Button(role: .destructive
+            ) {
+                nav.popToRoot()
+            } label: {
+                Text("Oui")
+                    .foregroundStyle(Color.green)
+            }
+            Button(role: .cancel) {
+                
+            } label: {
+                Text("Non")
+                    
+            }
+
+
+        }
+        .sheet(isPresented: $isShowingScoreView) {
+            InGameScoreView(gamersArray: playerViewModel.playersArray, isShowingScoreView: $isShowingScoreView)
+        }
         
     }
 }

@@ -29,33 +29,14 @@ struct FirstPlayerSelectionView: View {
     
     
     
-    @State var isQuitGameAlertOn: Bool = false
+    
     
     @State var isNavToGame: Bool = false
     var body: some View {
         VStack {
-            if table.gamersArray[0].score > 0 {
-                HStack {
-                    Button {
-                        isQuitGameAlertOn = true
-                    }label: {
-                        Image(systemName: "chevron.left")
-                            .frame(width: 45, height: 45)
-                            .foregroundColor(.textColor)
-                            .font(.title2)
-                            
-                           
-                    }
-                    
-                    TitleView(isJustTitle: false, title: "Quitter le jeu")
-                        .padding(.trailing, 45)
-                
-            }
-                .padding(.top, 15)
-
-            } else {
-                MyBackButtonWithTitleView(title: "Définis l'ordre de jeu")
-            }
+            
+            MyBackButtonWithTitleView(title: "Définis l'ordre de jeu")
+        
             List {
                 ForEach(table.gamersArray, id: \.unwrappedUUID) { gamer in
                     HStack {
@@ -84,7 +65,7 @@ struct FirstPlayerSelectionView: View {
             }
             .listStyle(.plain)
             
-            .environment(\.editMode, .constant(.active))
+            .environment(\.editMode, .constant(table.gamersArray[0].score > 0 ? .inactive : .active))
             
            
             
@@ -105,20 +86,7 @@ struct FirstPlayerSelectionView: View {
             playerViewModel.save()
            
         }
-        .alert("Êtes-vous sûr de quitter le jeu ?", isPresented: $isQuitGameAlertOn) {
-            Button {
-                nav.popToRoot()
-            } label: {
-                Text("Oui")
-            }
-            Button {
-                
-            } label: {
-                Text("Non")
-            }
-
-
-        }
+        
         
     }
         

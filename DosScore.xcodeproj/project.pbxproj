@@ -27,6 +27,7 @@
 		144714C829E6F87C00173D25 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 144714C629E6F87C00173D25 /* Model.xcdatamodeld */; };
 		144714E729E70B7A00173D25 /* Table+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144714E329E70B7A00173D25 /* Table+CoreDataClass.swift */; };
 		144714E829E70B7A00173D25 /* Table+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144714E429E70B7A00173D25 /* Table+CoreDataProperties.swift */; };
+		1457EB262B4580E400F530B4 /* InGameScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1457EB252B4580E400F530B4 /* InGameScoreView.swift */; };
 		14716F6A29F9414F00777987 /* Player+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14716F6929F9414F00777987 /* Player+CoreDataClass.swift */; };
 		14716F6B29F9414F00777987 /* Player+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14716F6829F9414F00777987 /* Player+CoreDataProperties.swift */; };
 		14716F6D29F95ADD00777987 /* SelectPlayerImageModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14716F6C29F95ADD00777987 /* SelectPlayerImageModalView.swift */; };
@@ -78,6 +79,7 @@
 		144714C729E6F87C00173D25 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		144714E329E70B7A00173D25 /* Table+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Table+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		144714E429E70B7A00173D25 /* Table+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Table+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		1457EB252B4580E400F530B4 /* InGameScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InGameScoreView.swift; sourceTree = "<group>"; };
 		14716F6829F9414F00777987 /* Player+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		14716F6929F9414F00777987 /* Player+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataClass.swift"; sourceTree = "<group>"; };
 		14716F6C29F95ADD00777987 /* SelectPlayerImageModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerImageModalView.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				14F41C1029800882000D6162 /* LadderView.swift */,
 				14BA171929AD15AD0009AF44 /* LadderOutsidePodiumView.swift */,
 				14F41C1229800891000D6162 /* GameView.swift */,
+				1457EB252B4580E400F530B4 /* InGameScoreView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				14716F6A29F9414F00777987 /* Player+CoreDataClass.swift in Sources */,
 				14F41BFB2976F20D000D6162 /* ContentView.swift in Sources */,
 				140ECD7629C1FABF00BF999D /* FontsExtension.swift in Sources */,
+				1457EB262B4580E400F530B4 /* InGameScoreView.swift in Sources */,
 				14F41C1329800891000D6162 /* GameView.swift in Sources */,
 				143AF8912AD598C100C6DF8A /* LadderMenuView.swift in Sources */,
 				143AF86D2ACEA21E00C6DF8A /* NavigationManager.swift in Sources */,
